@@ -2,9 +2,13 @@ import java.util.Scanner;
 public class CheckGender {
     public static void main(String[] args){
         Scanner scan = new Scanner(System.in);
+        
+        while(true){
+            
         String name = "", idNumber = "", gender = "", error = "ERROR", result = "";
         char ch = 0;
-                
+        
+        scan.nextLine();
         System.out.print("이름");
         name = scan.nextLine();
         
@@ -26,5 +30,12 @@ public class CheckGender {
             result = result;            
         }
         System.out.println(result);
+        System.out.println("0 : 종료 1 : 재시작");
+            switch(scan.nextInt()){
+                case 0 : return; 
+                case 1 : continue;
+                default : System.out.println(error); return;
+        }
     }
+}
 }
